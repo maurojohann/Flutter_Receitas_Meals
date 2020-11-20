@@ -7,7 +7,7 @@
         {
             "name": "receitas",
             "request": "launch",
-            "type": "dart"
+            "type": "dart"            
         }
     ]
 }

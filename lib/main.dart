@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:receitas/screens/meal_detail_screen.dart';
 import './screens/categories_screen.dart';
 import './screens/categories_meals_screen.dart';
 import './utils/app_routers.dart';
@@ -28,29 +29,11 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRouters.HOME: (ctx) => CategoriesScreen(),
         AppRouters.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
+        AppRouters.MEAL_DETAILS: (ctx) => MealDetailScreen(),
       },
+      // onUnknownRoute: (settings) {
+      //   return MaterialPageRoute(builder: (_) => CategoriesScreen());
+      // },
     );
   }
 }
-
-// class MyHomePage extends StatefulWidget {
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-//}
-
-// class _MyHomePageState extends State<MyHomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text(
-//           'Vamos Cozinhar',
-//           style: TextStyle(color: Colors.white),
-//         ),
-//       ),
-//       body: Center(
-//         child: CategoriesScreen(),
-//       ),
-//     );
-//   }
-// }

@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
 
 import 'package:receitas/models/meal.dart';
+import 'package:receitas/utils/app_routers.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
 
   const MealItem(this.meal);
 
-  void _selectMeal() {}
+  void _selectMeal(BuildContext context) {
+    Navigator.of(context).pushNamed(AppRouters.MEAL_DETAILS, arguments: meal);
+  }
+
+  //  void _selectCategory(BuildContext context) {
+  //   Navigator.of(context).pushNamed(
+  //     AppRouters.CATEGORIES_MEALS,
+  //     arguments: category,
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: _selectMeal,
+      onTap: () => _selectMeal(context),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         elevation: 4,
@@ -60,13 +70,13 @@ class MealItem extends StatelessWidget {
                   Row(children: [
                     Icon(Icons.work),
                     SizedBox(width: 6),
-                    Text('${meal.complexityText}')
+                    Text(meal.complexityText)
                   ]),
                   Row(
                     children: [
                       Icon(Icons.attach_money),
                       SizedBox(width: 6),
-                      Text('${meal.costText}')
+                      Text(meal.costText)
                     ],
                   )
                 ],
